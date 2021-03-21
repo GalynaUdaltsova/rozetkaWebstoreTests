@@ -18,7 +18,7 @@ public class HomePage {
         return signInPage.login(email, password);
     }
 
-    public void checkProductByCriteria(String criteriaValue) {
+    public void searchProductByCriteria(String criteriaValue) {
         driver.findElement(searchInput).sendKeys(criteriaValue);
         driver.findElement(searchSubmit).click();
         SearchResultsPage searchResultsPage = new SearchResultsPage(driver);

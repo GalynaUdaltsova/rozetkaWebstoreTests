@@ -6,7 +6,7 @@ import org.testng.Assert;
 import java.util.List;
 
 public class SearchResultsPage {
-    WebDriver driver;
+    protected WebDriver driver;
 
     private String searchResults = "//span[contains(text(),'%s')]";
 

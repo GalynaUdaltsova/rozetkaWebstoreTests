@@ -4,6 +4,6 @@ public class SearchResultsTest extends BaseTest {
     @Test
     public void checkSearchProduct() {
         HomePage homePage = new HomePage(driver);
-        homePage.checkProductByCriteria("Телефони");
+        homePage.searchProductByCriteria("Телефони");
     }
 }
