@@ -5,6 +5,7 @@
         <classes>
             <class name="BaseTest" />
             <class name="SignInTest" />
+            <class name="SearchResultsTest" />
         </classes>
     </test>
 </suite>
