@@ -9,15 +9,22 @@ public class SearchResultsPage {
     protected WebDriver driver;
 
     private String searchResults = "//span[contains(text(),'%s')]";
+    private By item = By.xpath("//span[@class='goods-tile__title'][1]");
 
     public SearchResultsPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void checkSearchResults(String criteriaValue) {
+    public SearchResultsPage checkSearchResults(String criteriaValue) {
         Assert.assertNotEquals(criteriaValue, null);
         List<WebElement> webElements = driver.findElements(By.xpath(String.format(searchResults, criteriaValue)));
         Assert.assertFalse(webElements.isEmpty());
+        return new SearchResultsPage(driver);
+    }
+
+    public ProductPage openToProductCard() {
+        driver.findElement(item).click();
+        return new ProductPage(driver);
     }
 }
 

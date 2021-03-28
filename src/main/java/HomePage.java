@@ -18,10 +18,10 @@ public class HomePage {
         return signInPage.login(email, password);
     }
 
-    public void searchProductByCriteria(String criteriaValue) {
+    public SearchResultsPage searchProductByCriteria(String criteriaValue) {
         driver.findElement(searchInput).sendKeys(criteriaValue);
         driver.findElement(searchSubmit).click();
         SearchResultsPage searchResultsPage = new SearchResultsPage(driver);
-        searchResultsPage.checkSearchResults(criteriaValue);
+        return searchResultsPage.checkSearchResults(criteriaValue);
     }
 }

@@ -1,10 +1,18 @@
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class SignInTest extends BaseTest {
 
-    @Test
-    public void checkLoginToSite() {
+    @DataProvider(name = "login")
+    public Object[][] login() {
+        return new Object[][] {
+                { "gudalcova@ukr.net", "Password1"},
+        };
+    }
+
+    @Test(dataProvider = "login")
+    public void checkLoginToSite(String email, String password) {
         HomePage homePage = new HomePage(driver);
-        homePage.login("gudalcova@ukr.net", "Password1");
+        homePage.login(email, password);
     }
 }
