@@ -21,7 +21,6 @@ public class HomePage {
     public SearchResultsPage searchProductByCriteria(String criteriaValue) {
         driver.findElement(searchInput).sendKeys(criteriaValue);
         driver.findElement(searchSubmit).click();
-        SearchResultsPage searchResultsPage = new SearchResultsPage(driver);
-        return searchResultsPage.checkSearchResults(criteriaValue);
+        return new SearchResultsPage(driver);
     }
 }

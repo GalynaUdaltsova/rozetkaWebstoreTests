@@ -6,7 +6,7 @@ public class SignInTest extends BaseTest {
     @DataProvider(name = "login")
     public Object[][] login() {
         return new Object[][] {
-                { "gudalcova@ukr.net", "Password1"},
+                { "example1990@ukr.net", "Password1"},
         };
     }
 

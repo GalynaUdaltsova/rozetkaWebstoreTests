@@ -15,13 +15,6 @@ public class SearchResultsPage {
         this.driver = driver;
     }
 
-    public SearchResultsPage checkSearchResults(String criteriaValue) {
-        Assert.assertNotEquals(criteriaValue, null);
-        List<WebElement> webElements = driver.findElements(By.xpath(String.format(searchResults, criteriaValue)));
-        Assert.assertFalse(webElements.isEmpty());
-        return new SearchResultsPage(driver);
-    }
-
     public ProductPage openToProductCard() {
         driver.findElement(item).click();
         return new ProductPage(driver);
